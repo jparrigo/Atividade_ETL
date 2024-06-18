@@ -4,3 +4,5 @@ type Acao = {
   nome: string;
   valor_atual: number;
 }
+
+export default Acao;
