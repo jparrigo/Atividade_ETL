@@ -26,11 +26,12 @@ const clienteRepository = {
       callback(this?.lastID.toString());
     })
   },
-  deleteCliente: (clienteId: number) => {
+  deleteCliente: (clienteId: number, callback: (value: boolean) => void) => {
     const sql = "DELETE FROM cliente WHERE id = ?"
     const params = [clienteId]
     database.run(sql,params, function (_err) {
       console.log("Cliente deletado com sucesso!");
+      callback(true);
     })
   }
 }
