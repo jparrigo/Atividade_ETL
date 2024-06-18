@@ -1,4 +1,5 @@
 type Ordem = {
+  id? : number;
   cliente: number;
   acao: number;
   data_hora: number;
