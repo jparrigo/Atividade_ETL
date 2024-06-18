@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import clienteR from "./routers/cliente-router";
+import clienteR from "./routers/resumo.router";
 
 const PORT = 4000;
 const HOSTNAME = "http://localhost";

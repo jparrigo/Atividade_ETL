@@ -33,4 +33,15 @@ clienteR.put("/cliente", (req, res) => {
   })
 })
 
+clienteR.delete("/cliente", (req, res) => {
+  const clienteId: number  = req.body.id;
+  clienteRepository.deleteCliente(clienteId, (value) => {
+    if (value) {
+      res.status(201).send("Cliente Deletado com Sucesso!")
+    } else {
+      res.status(400).send("Algo deu errado.")
+    }
+  })
+})
+
 export default clienteR;
