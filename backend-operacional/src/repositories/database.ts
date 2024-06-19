@@ -7,16 +7,16 @@ const DBSOURCE = "db.sqlite";
  * sendo: 0 => false e 1 => true.
  */
 const SCRIPT_CLIENTE = `
-    CREATE TABLE cliente (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nome TEXT,
-        cpf INTEGER
-    )`;
+  CREATE TABLE cliente (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      nome TEXT,
+      cpf INTEGER
+  )`;
 const SCRIPT_ORDEM = `
   CREATE TABLE ordem (
     cliente INTEGER,
     acao INTEGER,
-    data_hora INTEGER,
+    data_hora DATETIME DEFAULT CURRENT_TIMESTAMP,
     qtde INTEGER,
     valor_total INTEGER,
     executada INTEGER

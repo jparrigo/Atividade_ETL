@@ -9,8 +9,8 @@ const ordemRepository = {
     })
   },
   addOrdem: (ordem: Ordem, callback: (id?: number) => void) => {
-    const sql = "INSERT INTO ordem (cliente, acao, data_hora, qtde, valor_atual, executada) VALUES (?, ?, ?, ?, ?, ?)";
-    const params = [ordem.cliente, ordem.acao, ordem.data_hora, ordem.qtde, ordem.valor_total, ordem.executada];
+    const sql = "INSERT INTO ordem (cliente, acao, qtde, valor_total, executada) VALUES (?, ?, ?, ?, ?)";
+    const params = [ordem.cliente, ordem.acao, ordem.qtde, ordem.valor_total, ordem.executada];
     database.run(sql, params, function (_err: any) {
       callback(this?.lastID);
     });

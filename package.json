@@ -1,0 +1,15 @@
+{
+  "name": "atividade_etl",
+  "version": "1.0.0",
+  "description": "22010823 - Bruno Fontolan Alves 22007679 - Enrico Ribeiro Farina 22007283 - Guilherme Ferreira Jorge 22005246 - João Paulo Toledo de Almeida Arrigo",
+  "main": "index.js",
+  "scripts": {
+    "inst": "concurrently \"cd backend-decisao && npm i\" \"cd backend-operacional && npm i\"",
+    "start": "concurrently \"cd backend-decisao && npm run start\" \"cd backend-operacional && npm run start\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

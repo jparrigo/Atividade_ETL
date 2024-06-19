@@ -9,7 +9,30 @@ const resumoRepository = {
     database.run(sql, params, function (_err) {
       callback(this?.lastID);
     });
-  }
+  },
+  update: (resumoId: number | undefined, resumo: Resumo, callback: (id?: number) => void) => {
+    console.log(resumo);
+    const sql = "UPDATE resumo (acao, qtde, liquido) VALUES (?, ?, ?) WHERE id = ?";
+    const params = [resumo.acao, resumo.qtde, resumo.liquido,resumoId];
+    database.run(sql, params, function (_err) {
+      callback(this?.lastID);
+    });
+  },
+  delete: (resumoId: number | undefined, callback: (id?: number) => void) => {
+    console.log(resumoId);
+    const sql = "DELETE FROM resumo WHERE id = ?";
+    const params = [resumoId];
+    database.run(sql, params, function (_err) {
+      callback(this?.lastID);
+    });
+  },
+  get: (callback: (clientes: Array<Resumo>) => void) => {
+    const sql = "SELECT * FROM resumo"
+    database.all(sql, function (_err,rows) {
+      console.log(rows);
+      callback(rows as Array<Resumo>)
+    })
+  },
 }
 
 export default resumoRepository;

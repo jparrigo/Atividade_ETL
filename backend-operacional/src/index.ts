@@ -11,11 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
-app.use("/api", clienteR);
-
-app.use("/acao", acaoRouter);
-
-app.use("/ordem", ordemRouter);
+app.use("/api", clienteR, acaoRouter, ordemRouter);
 
 // Start server
 app.listen(PORT, () => {

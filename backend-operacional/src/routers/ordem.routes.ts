@@ -32,7 +32,7 @@ ordemR.put("/ordem", (req, res) => {
   })
 })
 
-ordemR.DELETE("/ordem", (req, res) => {
+ordemR.delete("/ordem", (req, res) => {
   const ordem: Ordem = req.body;
   ordemRepository.deleteOrdem(ordem.id, (id) => {
     if (id) {

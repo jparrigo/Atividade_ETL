@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import clienteR from "./routers/resumo.router";
 
-const PORT = 4000;
+const PORT = 4001;
 const HOSTNAME = "http://localhost";
 
 const app = express();

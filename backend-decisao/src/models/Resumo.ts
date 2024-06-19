@@ -1,5 +1,5 @@
 type Resumo = {
-  id?: string;
+  id?: number;
   acao: number;
   qtde: number;
   liquido: number;

@@ -4,13 +4,13 @@ import acaoRepository from "../repositories/acao-repository";
 
 const acaoRouter = express.Router();
 
-acaoRouter.get("/", (_req, res) => {
+acaoRouter.get("/acao", (_req, res) => {
   acaoRepository.getAcao((acoes) => {
     res.status(201).send(acoes);
   });
 });
 
-acaoRouter.post("/", (req, res) => {
+acaoRouter.post("/acao", (req, res) => {
   const acao: Acao = req.body as Acao;
   acaoRepository.addNew(acao, (id) => {
     if (id) {
@@ -21,7 +21,7 @@ acaoRouter.post("/", (req, res) => {
   });
 });
 
-acaoRouter.put("/", (req, res) => {
+acaoRouter.put("/acao", (req, res) => {
   const acao: Acao = req.body as Acao;
   console.log(acao.id);
   acaoRepository.updateAcao(acao.id, acao, (id) => {
@@ -33,7 +33,7 @@ acaoRouter.put("/", (req, res) => {
   });
 });
 
-acaoRouter.delete("/:id", (req, res) => {
+acaoRouter.delete("/acao/:id", (req, res) => {
   const acaoId: number = +req.params.id;
   acaoRepository.deleteAcao(acaoId, (error) => {
     if (error) {
